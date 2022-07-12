@@ -27,19 +27,19 @@
    &lt RSE TAB &kp GRAVE &kp Q &kp W &kp E &kp R &kp T &kp Y         &kp U  &kp I     &kp O   &kp P    &kp LBKT &mt RWIN RBKT
             &kp LCTRL &kp A &kp S &kp D &kp F &kp G &kp H         &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
             &kp LALT  &kp Z &kp X &kp C &kp V &kp B &kp N         &kp M  &kp COMMA &kp DOT &kp FSLH &kp BSLH
-                        &kp LWIN &lt LWR RET &kp RET &mt LSHFT SPACE &kp BSPC &lt RSE DEL
+                        &kp LWIN &lt LWR RET &lt NAVI RET &mt LSHFT SPACE &kp BSPC &lt RSE DEL
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // | ESC |  _  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | F11 | F12 |
 //       |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
-//       |  =  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 |     |
+//       | SHFT |    |  +  |  -  |  {  |  [  |   |  ]  |  }  |  =  |  _  |     |     |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
   &kp ESC &kp UNDER      &kp N1   &kp N2 &kp N3   &kp N4   &kp N5           &kp N6    &kp N7   &kp N8   &kp N9   &kp N0  &kp F11 &mt RGUI F12
           &mt LCTRL PLUS &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &mt RCTRL MINUS
-          &mt LALT EQUAL &kp F1   &kp F2 &kp F3   &kp F4   &kp F5           &kp F6    &kp F7   &kp F8   &kp F9   &kp F10   &trans
+          &kp LSHFT  &trans       &kp KP_PLUS       &kp KP_MINUS       &kp LEFT_BRACE       &kp LEFT_BRACKET  &kp RIGHT_BRACKET        &kp RIGHT_BRACE            &kp KP_EQUAL           &kp UNDERSCORE           &trans     &trans
                                               &lt ADJ TAB &trans &trans   &trans &trans &lt ADJ DEL
                         >;
                 };
