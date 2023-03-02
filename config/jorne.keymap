@@ -11,7 +11,7 @@
 #define DEF 0
 #define LWR 1
 #define RSE 2
-//#define ADJ 3
+#define ADJ 3
 
 / {
         keymap {
@@ -46,29 +46,32 @@
 
                 raise_layer {
                         // -----------------------------------------------------------------------------------------
-                        // |     |   ESC  |     |        |         |cmd+sh+3|cmd+sh+4|      |     |     |     |     |     |     |     |
+                        // |     |   ESC  | ADJ |        |         |cmd+sh+3|cmd+sh+4|      |     |     |     |     |     |     |     |
                         //       |        |     |  LEFT  |  RIGHT  |  UP    |  PG_UP |      |HOME |     |     |     |     |     |
                         //       |        |     |        |         |  DOWN  |  PG_UP |      | END |     |     |     |     |     |
                         //                          |     |     |     |                     |     |        |     |
                         bindings = <
-   &trans &kp ESC &trans &trans   &trans    &kp LG(LS(N3))   &kp LG(LS(N4))          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR &trans
-          &trans &trans &kp LEFT &kp RIGHT &kp UP   &kp PG_UP                        &kp HOME   &trans   &trans  &trans &trans &bootloader
-          &trans &trans &trans   &trans    &kp DOWN &kp PG_DN                        &kp END    &trans   &trans  &trans &trans &reset
+   &trans &kp ESC &to ADJ &trans   &trans    &kp LG(LS(N3))   &kp LG(LS(N4))          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR &trans
+          &trans  &trans  &kp LEFT &kp RIGHT &kp UP   &kp PG_UP                        &kp HOME   &trans   &trans  &trans &trans &bootloader
+          &trans  &trans  &trans   &trans    &kp DOWN &kp PG_DN                        &kp END    &trans   &trans  &trans &trans &reset
                                  &trans &trans &trans   &trans &trans &trans
                         >;
                 };
-//                adjust_layer {
+                adjust_layer {
 // -----------------------------------------------------------------------------------------
-// | RST | BLDR |     |     |     |     |     |   |     |     |     |     |     | BLDR | RST |
-//       | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BTCLR|
-//       |      |     |     |     |     |     |   |     |     |     |     |     |      |
-//                          |     |     |     |   |     |     |     |
-//                        bindings = <
-//   &reset &bootloader  &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &bootloader &reset
-//          &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR
-//          &kp KP_N7    &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &none
-//                                                                    &trans &none &trans   &trans &none &trans
-//                        >;
-//                };
+// |  RSE |   ~       |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  [   |     |
+//        | CTRL/Tab  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+//        | SHFT      |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT |
+//                           | GUI | LWR | RET |   | SPC | BKSP | RSE |
+                        bindings = <
+    &trans     &mt TAB ESC   &kp Q &kp W &kp E &kp R &kp T     &to DEF   &to DEF  &to DEF  &to DEF  &to DEF  &to DEF    &trans
+               &kp LCTRL     &kp A &kp S &kp D &kp F &kp G     &to DEF  &to DEF  &to DEF  &to DEF  &to DEF  &to DEF
+               &kp LSHFT     &kp Z &kp X &kp C &kp V &kp B     &to DEF  &to DEF  &to DEF  &to DEF  &to DEF  &to DEF
+                        &kp LWIN &mo LWR  &kp SPACE                      &to DEF &to DEF &to DEF
+                        >;
+                };
+
+
+
         };
 };
